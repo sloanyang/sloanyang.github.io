@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load("visualization", "1", {packages: ["corechart"]});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+	      var data = google.visualization.arrayToDataTable([
+	        ['Genre', 'Fantasy & Sci Fi', 'Romance', 'Mystery/Crime', 'General',
+	         'Western', 'Literature', { role: 'annotation' } ],
+	        ['2010', 10, 24, 20, 32, 18, 5, ''],
+	        ['2020', 16, 22, 23, 30, 16, 9, ''],
+	        ['2030', 28, 19, 29, 30, 12, 13, ''],
+	      ]);
+	
+	      var options = {
+	        width: 600,
+	        height: 400,
+		legend: { position: "none" },
+		bar: { groupWidth: '75%' },
+	        isStacked: true,
+	      };
+        
+
+        // Instantiate and draw our chart, passing in some options.
+        var visualization = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        visualization.draw(data, options);
+      }
+    </script>
+
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['orgchart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Class');
+        data.addColumn('string', 'Parent');
+        data.addColumn('string', 'ToolTip');
+        data.addRows([
+          ['Failure', 'MaybeObject', ''],
+          ['Object', 'MaybeObject', ''],
+          ['Smi', 'Object', ''],
+          ['HeapObject', 'Object', ''],
+          ['JSReceiver', 'HeapObject', ''],
+          ['JSObject', 'JSReceiver', ''],
+          ['JSArray', 'JSObject', ''],
+          ['JSSet', 'JSObject', ''],
+          ['JSMap', 'JSObject', ''],
+          ['JSWeakMap', 'JSObject', ''],
+          ['JSRegMap', 'JSObject', ''],
+          ['JSFunction', 'JSObject', ''],
+          ['JSModule', 'JSObject', ''],
+          ['GlobalObject', 'JSObject', ''],
+          ['JSGlobalObject', 'GlobalObject', ''],
+          ['JSBuiltinsObject', 'GlobalObject', ''],
+          ['JSGlobalProxy', 'JSObject', ''],
+          ['JSValue', 'JSObject', ''],
+          ['JSDate', 'JSValue', ''],
+          ['JSMessageObject', 'JSObject', ''],
+          ['JSProxy', 'JSReceiver', ''],
+          ['JSFunctionProxy', 'JSProxy', ''],
+          ['FixedArrayBase', 'HeapObject', ''],
+          ['ByteArray', 'FixedArrayBase', ''],
+          ['FixedArray', 'FixedArrayBase', ''],
+          ['DescriptorArray', 'FixedArray', ''],
+          ['HashTable', 'FixedArray', ''],
+          ['Dictionary', 'HashTable', ''],
+          ['StringTable', 'HashTable', ''],
+          ['CompilationCacheTable', 'HashTable', ''],
+          ['CodeCacheHashTable', 'HashTable', ''],
+          ['MapCache', 'HashTable', ''],
+          ['Context', 'FixedArray', ''],
+          ['JSFunctionResultCache', 'FixedArray', ''],
+          ['ScopeInfo', 'FixedArray', ''],
+          ['TransitionArray', 'FixedArray', ''],
+          ['FixedDoubleArray', 'FixedArrayBase', ''],
+          ['ExternalArray', 'FixedArrayBase', ''],
+          ['ExternalPixelArray', 'ExternalArray', ''],
+          ['ExternalByteArray', 'ExternalArray', ''],
+          ['ExternalUnsignedByteArray', 'ExternalArray', ''],
+          ['ExternalUnsignedShortArray', 'ExternalArray', ''],
+          ['ExternalIntArray', 'ExternalArray', ''],
+          ['ExternalUnsignedIntArray', 'ExternalArray', ''],
+          ['ExternalFloatArray', 'ExternalArray', ''],
+          ['Name', 'HeapObject', ''],
+          ['String', 'Name', ''],
+          ['SeqString', 'String', ''],
+          ['SeqOneByteString', 'SeqString', ''],
+          ['SeqTwoByteString', 'SeqString', ''],
+          ['SlicedString', 'String', ''],
+          ['ConsString', 'String', ''],
+          ['ExternalString', 'String', ''],
+          ['ExternalAsciiString', 'ExternalString', ''],
+          ['ExternalTwoByteString', 'ExternalString', ''],
+          ['InternalizedString', 'String', ''],
+          ['SeqInternalizedString', 'InternalizedString', ''],
+          ['SeqOneByteInternalizedString', 'SeqInternalizedString', ''],
+          ['SeqTwoByteInternalizedString', 'SeqInternalizedString', ''],
+          ['ConsInternalizedString', 'InternalizedString', ''],
+          ['ExternalInternalizedString', 'InternalizedString', ''],
+          ['ExternalAsciiInternalizedString', 'ExternalInternalizedString', ''],
+          ['ExternalTwoByteInternalizedString', 'ExternalInternalizedString', ''],
+          ['Symbol', 'Name', ''],
+          ['HeapNumber', 'HeapObject', ''],
+          ['Code', 'HeapObject', ''],
+          ['Map', 'HeapObject', ''],
+          ['Oddball', 'HeapObject', ''],
+          ['Foreign', 'HeapObject', ''],
+          ['SharedFunctionInfo', 'HeapObject', ''],
+          ['Struct', 'HeapObject', ''],
+          ['DeclaredAccessorDescriptor', 'Struct', ''],
+          ['AccessorInfo', 'Struct', ''],
+          ['DeclaredAccessorInfo', 'AccessorInfo', ''],
+          ['ExecutableAccessorInfo', 'AccessorInfo', ''],
+          ['AccessorPair', 'Struct', ''],
+          ['AccessCheckInfo', 'Struct', ''],
+          ['InterceptorInfo', 'Struct', ''],
+          ['CallHandlerInfo', 'Struct', ''],
+          ['TemplateInfo', 'Struct', ''],
+          ['FunctionTemplateInfo', 'TemplateInfo', ''],
+          ['ObjectTemplateInfo', 'TemplateInfo', ''],
+          ['Script', 'Struct', ''],
+          ['SignatureInfo', 'Struct', ''],
+          ['TypeSwitchInfo', 'Struct', ''],
+          ['DebugInfo', 'Struct', ''],
+          ['BreakPointInfo', 'Struct', ''],
+          ['CodeCache', 'Struct', ''],
+        ]);
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div2'));
+        chart.draw(data, {allowHtml:true, allowCollapse:true});
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+    <div id="chart_div2"></div>
+  </body>
+</html>
+
