@@ -18,14 +18,17 @@
 	      var data = google.visualization.arrayToDataTable([
 	        ['Class', 'Map', 'HeapNumberMantissa', 'HeapNumberExponent',
 	         'JSObjectProperties', 'JSObjectElements', 'FixedArrayBaseLength',
-		 'FixedArrayData',
+		 'Fixed(Doubld)ArrayData', 'DescriptorArrayDescriptorLength', 'DescriptorArrayEnumCache',
+		 'DescriptorArrayData', 
 		 { role: 'annotation' } ],
-	        ['Object', 0, 0, 0, 0, 0, 0, 0, ''],
-	        ['HeapObject', 4, 0, 0, 0, 0, 0, 0, ''],
-	        ['HeapNumber', 4, 4, 4, 0, 0, 0, 0, ''],
-	        ['JSObject', 4, 0, 0, 4, 4, 0, 0, ''],
-	        ['FixedArrayBase', 4, 0, 0, 0, 0, 4, 0, ''],
-	        ['FixedArray', 4, 0, 0, 0, 0, 4, 40, ''],
+	        ['Object', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''],
+	        ['HeapObject', 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''],
+	        ['HeapNumber', 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, ''],
+	        ['JSObject', 4, 0, 0, 4, 4, 0, 0, 0, 0, 0, ''],
+	        ['FixedArrayBase', 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, ''],
+	        ['FixedArray', 4, 0, 0, 0, 0, 4, 40, 0, 0, 0, ''],
+	        ['FixedDoubleArray', 4, 0, 0, 0, 0, 4, 80, 0, 0, 0, ''],
+	        ['DescriptorArray', 4, 0, 0, 0, 0, 4, 0, 4, 4, 40, ''],
 	      ]);
 	
 	      var options = {
