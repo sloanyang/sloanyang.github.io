@@ -1,0 +1,11 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1423194659555" ID="ID_1028226350" MODIFIED="1423194667448" TEXT="Compiler">
+<node CREATED="1423194671947" ID="ID_1338403409" MODIFIED="1423194681697" POSITION="right" TEXT="v8 crankshaft">
+<node CREATED="1423194716818" ID="ID_87745254" MODIFIED="1423194764606" TEXT="armv6 vfpv2 lithium"/>
+<node CREATED="1423194775529" ID="ID_127913939" MODIFIED="1423194784246" TEXT="parser"/>
+</node>
+<node CREATED="1423194686506" ID="ID_1746258573" MODIFIED="1423194690767" POSITION="left" TEXT="hotspot"/>
+<node CREATED="1423194708994" ID="ID_128889516" MODIFIED="1423194710975" POSITION="right" TEXT="dalvik"/>
+</node>
+</map>
