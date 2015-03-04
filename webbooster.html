@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>CM Speed Booster</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+        <script src="jquery.knob.min.js"></script>
+
+
+</head>
+<body>
+<!-- LOOP LOADER -->
+<input class="knob s" data-targetValue="15">
+
+<script>
+var s = 0;
+
+$('.s').data('targetValue', s);
+//basic setup
+$('.knob').knob({
+    value: 0,
+        'readOnly': true,
+        'width': 120,
+        'height': 120,
+        'dynamicDraw': true,
+        'thickness': 0.2,
+        'tickColorizeValues': true,
+        'skin': 'tron'
+});
+$.when(
+    $('.knob').each(function(){
+        $(this).animate({
+    value: parseInt($(this).data('targetValue'))
+}, {
+    duration: 500,
+    easing: 'swing',
+    progress: function () {
+        $(this).val(Math.round(this.value)).trigger('change')
+    }
+});
+})).then(function () {
+    cpuSimulator();
+});
+
+function cpuSimulator() {
+    var J = 100,
+        getNow = function() {
+            return new Date().getTime();
+        };
+
+    !(function() {
+            var s = 1, D;
+            fn = function(l) {
+                l = 15;
+
+                var now = getNow();
+                var c = 1;
+                while (c < J) {
+                    if (now > D + 1000 + c*s) {
+                        l++;
+                    }
+                    c++;
+                }
+                
+                D = getNow();
+
+    		$('.s').val((l/J)* 100).trigger("change");
+            },
+            t = setInterval(fn, 1000),
+            D = getNow();
+            fn();
+    })();
+}
+
+</script>
+
+<!-- END LOOP LOADER -->
+</body>
+</html>
