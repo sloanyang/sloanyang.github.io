@@ -37,24 +37,7 @@
 				      	$('#loginBtn').hide();
 				      	$('#logoutBtn').show();
 						$('#userDetails').show();
-						$('#userInfo').html(response.name + '<br>' + response.email + '<br>' + response.location.name + '<br>' +'Home Town :'+ response.hometown.name);
-				    });
-FB.api('/me/friends', function(response) {
-console.log(response);
-        if(response.data) {
-            $.each(response.data,function(index,friend) {
-                console.log(friend.name + ' has id:' + friend.id);
-            });
-        } else {
-            alert("Error!");
-        }
-    });
-				    FB.api("/me/picture?width=200&redirect=0&type=normal&height=200", function (response) {
-				      	if (response && !response.error) {
-				        	/* handle the result */
-				        	console.log('PIC ::', response);
-				        	$('#userPic').attr('src', response.data.url);
-				      	}
+						$('#userInfo').html(response.name + '<br>');
 				    });
 				}
 			}
